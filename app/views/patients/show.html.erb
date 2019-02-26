@@ -1,0 +1,22 @@
+<h1><%= @patient.name %>: Doctors</h1>
+<hr />
+<table class="ui celled table">
+<thead>
+<tr>
+<th>Physicians</th>
+<th> Specialty </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <% @patient.physicians.each do |physician| %>
+        <td><%= link_to physician.name, physician %></td>
+        <td> Specialty </td>
+  </tr>
+   <% end %>
+  </tbody>
+</table>
+<br />
+<br />
+<br />
+<%= link_to 'Delete Patient', @patient, method: :delete, class: "ui red button inverted" %>

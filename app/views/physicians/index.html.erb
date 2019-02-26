@@ -1,0 +1,22 @@
+<h1> Physicians</h1>  
+<hr />
+<a><%= link_to 'Add Physician', new_physician_path, class: "ui inverted blue button"  %></a>
+<table class="ui celled table">
+  <h2><%= @physicians.length <= 0 ? "No Physicians" : "" %></h2> 
+  <thead>
+  <tr>
+  <th> Physicians </th>
+  <th> Specialty </th>
+  </tr>
+  </thead>
+  <tbody>
+  
+    <% @physicians.each do |physician| %>
+    <tr>
+    <td><%= link_to physician.name, physician %></td>
+    <td> Specialty </td>
+    <% end %>
+  </tr>
+  </tbody>
+</table>
+

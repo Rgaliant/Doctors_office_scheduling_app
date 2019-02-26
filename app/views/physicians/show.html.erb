@@ -1,0 +1,27 @@
+<h1><%= @physician.name %></h1>
+<hr />
+
+<table class="ui big celled table">
+<thead>
+  <tr>
+  <th><h2>Patients</h2></th>
+  <th> Date </th>
+  <th> Time </th>
+  </tr>
+</thead>
+  <tbody>
+  <% @physician.appointments.each do |appt| %>
+    <tr>
+      <td><%= link_to appt.patient.name, patient_path %></td>
+      <td><%= appt.date.strftime('%a, %b, %d, %Y') %></td>
+      <td><%= appt.time.strftime('%l:%M %p') %></td>
+    </tr>
+  </tbody>
+      <% end %>
+</table>
+<br />
+<%= link_to 'Appointments', physician_appointments_path(@physician), class: "ui primary button inverted" %>
+<br />
+<br />
+<br />
+<%= link_to 'Delete Physician', @physician, method: :delete, class: "ui red button inverted" %>
