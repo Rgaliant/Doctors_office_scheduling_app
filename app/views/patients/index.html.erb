@@ -6,7 +6,7 @@
 <thead>
 <tr>
 <th> Patient Name </th>
-<th> Physicians </th>
+<th> Delete </th>
 </tr>
 </thead>
 <tbody>
@@ -14,10 +14,11 @@
   <% @patients.each do |patient| %>
    
      <td> <%= link_to patient.name, patient%></td>
-     <td> <%= link_to patient.physicians.name, [@physician, patient] %></td>
+   <td><%= link_to 'Delete ', [@physician, patient], method: :delete, class: "ui right floated red button inverted" %> </td>
     
  
   </tr>
    <% end %>
 </tbdy>
 </table>
+

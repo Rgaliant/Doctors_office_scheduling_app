@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_physician
+  
 
   def index
     @appointments = @physician.appointments.order(:date, :time)
@@ -7,7 +8,6 @@ class AppointmentsController < ApplicationController
 
 
     def new
-      @physicians = Physician.all - @physician.patients
       @appointment = @physician.appointments.new
     end
 

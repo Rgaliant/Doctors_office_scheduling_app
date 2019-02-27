@@ -14,7 +14,7 @@
     <% @physicians.each do |physician| %>
     <tr>
     <td><%= link_to physician.name, physician %></td>
-    <td> Specialty </td>
+    <td> <%= link_to 'Delete ', [@patient, physician], method: :delete, class: "ui right floated red button inverted" %> </td>
     <% end %>
   </tr>
   </tbody>
